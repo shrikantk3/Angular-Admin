@@ -7,7 +7,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json()); 
 const openai = new OpenAI({
-    apiKey:'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',
+    apiKey:'', // need to add after creation 
     dangerouslyAllowBrowser: true
 });
 
