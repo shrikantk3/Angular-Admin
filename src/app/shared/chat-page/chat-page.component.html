@@ -1,0 +1,19 @@
+<div class="chat-bot">
+    <figure>
+        <img src="#" />
+        <figcaption>You can search your, Content with the help of AI.</figcaption>
+    </figure>
+    <form [formGroup]="searchFrm" (submit)="chatMe(searchFrm.value.search)">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Search Here..</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="search" />
+                <mat-icon matSuffix>search</mat-icon>
+              </mat-form-field>
+        
+    </form>
+    <ul class="ai-reply">
+        <li *ngFor="let res of chatResponse">
+            {{res.message.content}}
+        </li>
+    </ul>
+</div>

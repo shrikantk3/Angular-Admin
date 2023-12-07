@@ -1,0 +1,13 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+       .login-container{
+        min-width: 400px;
+        width: 100%;
+    }
+    .mat-mdc-form-field{
+        width: 100%;
+    }
+}
