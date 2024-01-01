@@ -1,0 +1,10 @@
+<app-header [type]="'user'"></app-header>
+<section class="user-container">
+    <div class="sidebar">
+        <app-sidebar [type]="'user'"></app-sidebar>
+    </div>
+    <div class="user-page">
+        <router-outlet></router-outlet>
+    </div>
+</section>
+<app-footer></app-footer>

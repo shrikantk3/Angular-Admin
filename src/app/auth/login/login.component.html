@@ -5,7 +5,7 @@
                 <mat-card-title><h1><app-bmt-logo></app-bmt-logo>Login Here</h1></mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <form [formGroup]="loginfm">
+                <form [formGroup]="loginfm" (submit)="loginSubmit($event)">
                     <mat-grid-list cols="1" rowHeight="80px">
                         <mat-grid-tile>
                             <mat-form-field class="example-full-width">
@@ -23,12 +23,15 @@
                                 <mat-checkbox formControlName="remember">Remember Me</mat-checkbox>
                         </mat-grid-tile>
                         <mat-grid-tile>
-                            <button mat-button mat-raised-button color="primary" type="submit"> Submit</button>
+                            <button mat-button mat-raised-button color="primary" type="submit" style="width: 100%;"> Submit</button>
                     </mat-grid-tile>
                     </mat-grid-list>               
                     
                 </form>
             </mat-card-content>
+            <mat-card-footer style="text-align: center;">
+                <p>Create an Acocunt <a routerLink="/auth/signup">Sign Up</a></p>
+            </mat-card-footer>
         </mat-card>
     </div>
 </section>

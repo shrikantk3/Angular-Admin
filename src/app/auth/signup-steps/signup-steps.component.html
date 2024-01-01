@@ -1,0 +1,37 @@
+<section class="signup-steps">
+    <h3>User Type</h3>
+    <small>Please select your category for application.</small>
+    <form [formGroup]="signupfm" (submit)="onSubmit()">
+        <ul class="control-group">
+            <li class="control-items">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                    <mat-radio-button class="example-radio-button" formControlName="type" [value]="'asker'">Willing to
+                        Ask some topics</mat-radio-button><br />
+                    <mat-radio-button class="example-radio-button" formControlName="type"
+                        [value]="'tutor'">Tutor</mat-radio-button>
+                </mat-radio-group>
+            </li>
+            <li class="control-items">
+                <ng-select [items]="occupationList" bindLabel="name" [multiple]="true" [closeOnSelect]="false"
+                    [searchable]="true" bindLabel="name" placeholder="Select people" formControlName="occupation">
+                </ng-select>
+            </li>
+            <li class="control-items">
+                <!-- <mat-form-field class="example-full-width">
+                    <mat-label>Occupation</mat-label>
+                    <input type="text" matInput formControlName="occupation" placeholder="Ex. Software Developer"/>
+                </mat-form-field> -->
+                <ng-select [items]="occupationList" bindLabel="name" [multiple]="true" [closeOnSelect]="false"
+                    [searchable]="true" bindLabel="name" placeholder="Select people" formControlName="topics">
+                </ng-select>
+            <li class="control-items">
+                <!-- <mat-form-field class="example-full-width">
+                    <mat-label>Topics</mat-label>
+                    <input type="text" matInput formControlName="topics" placeholder="Ex. Java"/>
+                </mat-form-field> -->
+                <button type="submit" style="width: 100%;" mat-button mat-raised-button color="primary"
+                    type="submit">Save</button>
+            </li>
+        </ul>
+    </form>
+</section>

@@ -1,0 +1,6 @@
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let links of list">
+        <a routerLink="links.url"><mat-icon>facebook</mat-icon> {{links.name}}</a>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+</mat-list>

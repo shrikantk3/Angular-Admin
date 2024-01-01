@@ -1,0 +1,19 @@
+.footer{
+    padding:15px;
+    background-color: #f1f1f1;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        li{
+            &.middle{
+                display: flex;
+                flex-direction: column;
+                li{
+                   font-size:20px;
+                   padding:2px 9px; 
+                }
+            }
+        }
+    }
+}

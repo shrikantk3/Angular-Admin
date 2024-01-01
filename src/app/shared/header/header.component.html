@@ -1,1 +1,14 @@
-<p>header works!</p>
+<header class="header">
+    <ul class="w1">
+        <li class="header-left">
+            <app-bmt-logo></app-bmt-logo>
+        </li>
+        <li class="header-middle">
+            Welcome {{type}}
+        </li>
+        <li class="header-right">
+            <a routerLink="/auth"><mat-icon [color]="'warn'">power</mat-icon> LogOut</a>
+        </li>
+    </ul>
+    
+</header>

@@ -1,0 +1,16 @@
+.signup-steps{
+    min-width: 350px;
+    background-color: #fff;
+    height: 88.5vh;
+    padding:50px 15px;
+    mat-radio-group,mat-grid-tile-content, mat-form-field{
+        width:100%;
+    }
+    .control-group{
+        list-style: none;
+        padding:0;
+        .control-items{
+            padding:20px 15px;
+        }
+    }
+}

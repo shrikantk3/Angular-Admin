@@ -13,12 +13,21 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule} from '@angular/material/button';
 import { SharedModule } from '../shared/shared.module';
 import { AuthComponent } from './auth.component';
+import { SignupStepsComponent } from './signup-steps/signup-steps.component';
+import { MatRadioModule } from '@angular/material/radio'
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { authServices } from './auth.services';
+
+
 @NgModule({
   declarations: [
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    AuthComponent
+    AuthComponent,
+    SignupStepsComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +40,12 @@ import { AuthComponent } from './auth.component';
     MatCheckboxModule,
     MatButtonModule,
     SharedModule,
-    RouterModule
-  ]
+    RouterModule,
+    MatRadioModule,
+    NgSelectModule,
+    MatIconModule,
+    HttpClientModule
+  ],
+  providers:[authServices]
 })
 export class AuthModule { }

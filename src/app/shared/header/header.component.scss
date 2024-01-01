@@ -1,0 +1,22 @@
+.header{
+    padding:15px 15px;
+    background:#f1f1f1;
+    border-bottom: 1px solid #adadad;
+    box-shadow: 1px 1px 12px solid;
+    .w1{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        .header-middle{
+            width:100%;
+            text-align: right;
+            padding:0 15px;
+        }
+        .header-right{
+            width:100px;
+            display: flex;
+            align-items: center;
+            a{display: flex; text-decoration: none;align-items: center;}
+        }
+    }
+}

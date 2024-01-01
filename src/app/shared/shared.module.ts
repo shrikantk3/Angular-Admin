@@ -12,13 +12,19 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { Sharedservices } from './shared.services';
-import { HttpClientModule } from "@angular/common/http"
+import { HttpClientModule } from "@angular/common/http";
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatListModule} from "@angular/material/list"
+import { RouterModule } from '@angular/router';
+
+
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     BmtLogoComponent,
-    ChatPageComponent
+    ChatPageComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -30,13 +36,16 @@ import { HttpClientModule } from "@angular/common/http"
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule,
+    RouterModule,
   ],
   exports:[
     HeaderComponent,
     FooterComponent,
     BmtLogoComponent,
-    ChatPageComponent
+    ChatPageComponent,
+    SidebarComponent
   ],
   providers:[Sharedservices]
 })

@@ -1,6 +1,7 @@
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+
 @use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
@@ -32,8 +33,10 @@ $book-my-tutor-theme: mat.define-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($book-my-tutor-theme);
-
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import 'ngx-toastr/toastr';
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -42,12 +45,31 @@ $primary: #94bbe9;
 $secondry: #eeaeca;
 .chatGPT-page{
   display: flex;
-  justify-self: auto;
+  justify-self:auto;
   align-items: center;
-  justify-content:space-around;
+  justify-content:space-between;
+  min-height: 100vh;
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  
   .chatGPT{
    
   }
+  
+}
+.user-container{
+  min-height:60vh;
+  display: flex;
+  justify-content: space-between;
+  .user-page{
+    width: 100%;
+    padding:0px 15px;
+  }
+  .sidebar{
+    max-width:300px;
+    width: 100%;
+    border-right:1px solid #333;
+  }
+}
+.ng-select{
+  width:100%;
 }

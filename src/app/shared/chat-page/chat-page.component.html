@@ -1,6 +1,6 @@
 <div class="chat-bot">
     <figure>
-        <img src="#" />
+        <label class="AI-expert"><app-bmt-logo></app-bmt-logo> AI Expert</label>
         <figcaption>You can search your, Content with the help of AI.</figcaption>
     </figure>
     <form [formGroup]="searchFrm" (submit)="chatMe(searchFrm.value.search)">
@@ -8,12 +8,17 @@
                 <mat-label>Search Here..</mat-label>
                 <input matInput placeholder="Placeholder" formControlName="search" />
                 <mat-icon matSuffix>search</mat-icon>
+                
               </mat-form-field>
         
     </form>
-    <ul class="ai-reply">
+    <h3 *ngIf="isloading">Loading pleae wait..</h3>
+    <ul class="ai-reply" *ngIf="!isloading">
         <li *ngFor="let res of chatResponse">
-            {{res.message.content}}
+            <p class="desc" [innerHTML]="res.message.content"></p>
+            <p class="desc-btn">
+                <button mat-raised-button [color]="'warn'" routerLink="/auth/login">please login for more info <mat-icon>arrow-right</mat-icon></button>
+            </p>
         </li>
     </ul>
 </div>

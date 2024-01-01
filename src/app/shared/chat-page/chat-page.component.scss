@@ -1,12 +1,38 @@
-.ai-reply{
-    padding:40px;
-    background-color:hsla(0, 0%, 92%, 0.278);
-    border-radius:12px;
-    border: 2px solid #f88282;
-    li{
-        font-size: 20px;
-        line-height: 31px;
-        letter-spacing: 0px;
-        color: #2e4058;
+.chat-bot{
+    max-width:750px;
+    margin: auto;
+    figure{
+        padding:0;
+        margin:0 0 18px 0;
+        .AI-expert{
+            color: #fff;
+            background-color:#f88282;
+            padding:8px 10px 8px 0;
+            margin-bottom: 12px;
+            border-radius:15px 0 15px 0;
+            font-size: 30px;
+          }
+          figcaption{
+            margin-top: 12px;
+          }
+    }
+    .ai-reply{
+        padding:40px;
+        background-color:hsla(0, 0%, 92%, 0.278);
+        border-radius:12px;
+        border: 2px solid #f88282;
+        list-style: none;
+        max-height:50vh;
+        overflow: auto;
+        li{
+            font-size: 20px;
+            line-height: 31px;
+            letter-spacing: 0px;
+            color: #2e4058;
+            p{margin:0;}
+            .desc-btn{
+                text-align: right;
+            }
+        }
     }
 }

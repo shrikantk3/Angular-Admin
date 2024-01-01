@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { OpenAI } from 'openai';
 import { FormGroup, FormBuilder } from '@angular/forms'
-import { Sharedservices } from '../shared.services'
+import { Sharedservices } from '../shared.services';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-chat-page',
@@ -11,11 +12,13 @@ import { Sharedservices } from '../shared.services'
 export class ChatPageComponent {
   searchFrm:FormGroup;
   chatResponse:any;
+  isloading:boolean= false;
   _openai =new OpenAI({
-    apiKey:'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',
+    apiKey:environment.SECRET_KEY,
     dangerouslyAllowBrowser: true
   })
   constructor(private _fb:FormBuilder, private _api:Sharedservices){
+    console.log(environment.SECRET_KEY);
     this.searchFrm= this._fb.group({
       search:['']
     })
@@ -23,9 +26,11 @@ export class ChatPageComponent {
   }
   
   chatMe(query:string){
+    this.isloading =true;
     console.log("Statrt :", query);
     this._api.chatFunction(query).subscribe(res=>{
       this.chatResponse = res;
+      this.isloading =false;
     })
   }
 }

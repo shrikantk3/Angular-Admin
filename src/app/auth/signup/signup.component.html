@@ -1,1 +1,80 @@
-<p>signup works!</p>
+<section class="signup">
+    <div class="signup-container">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title><h1><app-bmt-logo></app-bmt-logo>Login Here</h1></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form [formGroup]="signupfm" (submit)="onSubmit()">
+                    <mat-grid-list cols="1" rowHeight="80px">                        
+                        <mat-grid-tile>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com"/>
+                                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>User Name</mat-label>
+                                <input type="text" matInput formControlName="username" (blur)="validateUser()" />
+                                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-grid-list cols="3">
+                                <mat-grid-tile>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>First Name</mat-label>
+                                        <input type="text" matInput formControlName="fname" />
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>middle Name</mat-label>
+                                        <input type="text" matInput formControlName="mname" />
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                                <mat-grid-tile>
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Last Name</mat-label>
+                                        <input type="text" matInput formControlName="lname" />
+                                    </mat-form-field>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                            
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Phone</mat-label>
+                                <input type="number" matInput formControlName="phone" [maxlength]="10"/>
+                                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Password</mat-label>
+                                <input type="password" matInput formControlName="password">
+                                <mat-icon matPrefix>key</mat-icon>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Confirm password</mat-label>
+                                <input type="password" matInput formControlName="cpassword">
+                                <mat-icon matPrefix>key</mat-icon>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <button type="submit" style="width: 100%;" mat-button mat-raised-button color="primary" type="submit"> Sign Up</button>
+                    </mat-grid-tile>
+                    </mat-grid-list>               
+                    
+                </form>
+            </mat-card-content>
+            <mat-card-footer style="text-align: center;">
+                <p>Already have an Acocunt <a routerLink="/auth/login">Login</a></p>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</section>
